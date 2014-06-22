@@ -13,6 +13,12 @@ app.use(express.cookieParser());
 // app.set('views', __dirname+'/views');  // default
 app.engine('html', require('ejs').renderFile); // render html using ejs
 
+// var oneDay = 86400000;
+// app.use(express.static(__dirname + '/views', { maxAge: oneDay }));
+
+app.use(express.static(__dirname + '/views'));
+
+
 app.get('/', function(req,res){
   res.render('index.html');
 });
